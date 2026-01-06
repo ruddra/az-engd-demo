@@ -72,4 +72,4 @@ jobs:
           app-name: 'func-engd-demo-st2025-000'
           slot-name: 'Production'
           package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_BA2AC93C60FF454795B4115944F34391 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_32EDE8670E384AB19B2A114148E8325A }}
