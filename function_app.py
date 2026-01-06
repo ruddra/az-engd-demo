@@ -36,6 +36,20 @@ def BlobTrigger(myblob: func.InputStream):
                 f"Blob Size: {myblob.length} bytes")
 
 
+# This example uses SDK types to directly access the underlying BlobClient object provided by the Blob storage trigger.
+# To use, uncomment the section below and add azurefunctions-extensions-bindings-blob to your requirements.txt file
+# Ref: aka.ms/functions-sdk-blob-python
+#
+# import azurefunctions.extensions.bindings.blob as blob
+# @app.blob_trigger(arg_name="client", path="mycontainer",
+#                   connection="AzureWebJobsStorage")
+# def BlobTrigger(client: blob.BlobClient):
+#     logging.info(
+#         f"Python blob trigger function processed blob \n"
+#         f"Properties: {client.get_blob_properties()}\n"
+#         f"Blob content head: {client.download_blob().read(size=1)}"
+#     )
+
 
 @app.route(route="readblob", auth_level=func.AuthLevel.ANONYMOUS)
 def http_read_blob(req: func.HttpRequest) -> func.HttpResponse:
